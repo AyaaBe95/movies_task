@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_task/movieDetails.dart';
 
 import 'movie.dart';
 
@@ -10,9 +11,9 @@ class MovieWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap: (){
-      //   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PostDetailsScreen(post: post,)));
-      // },
+      onTap: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => movieDetails(movie: movie,)));
+      },
       child: Padding(
         padding: const EdgeInsets.all(4.0),
         child: Card(
@@ -25,7 +26,7 @@ class MovieWidget extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                Text(movie!.title.toString(),style: const TextStyle(fontSize: 16),),
+                Text(movie!.title.toString(),style: const TextStyle(fontSize: 16)),
                 const SizedBox(height: 10),
                 Hero(
                     tag: movie!.id.toString(),
@@ -47,7 +48,6 @@ class MovieWidget extends StatelessWidget {
                   Text(movie!.voteAverage.toString(),textAlign: TextAlign.center, style: const TextStyle(fontSize: 14),
                   ),
                 )
-
               ],
             ),
           ),
