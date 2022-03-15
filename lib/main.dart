@@ -17,10 +17,12 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Movies"),
-        ) ,
+          title: const Text("Movies",style: TextStyle(color: Colors.black),),
+           backgroundColor: Colors.amber,
+        ),
         body: Container(
             child: const AllMovies()
         ),
